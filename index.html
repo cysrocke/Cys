@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>팝업 수첩 설치</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap">
+<style>
+:root{--bg:#FFF2F7;--ink:#3B1E2B;--muted:#7A5867;--pink:#FF7FB0;--pink-d:#E85A93;--card:#fff;--line:#F8D3E1;--warn:#FFF4CC;--warn-ink:#6B4A00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) radial-gradient(#FFD9E7 2px,transparent 2.4px) 0 0/22px 22px;color:var(--ink);font-family:"Gowun Dodum","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 32px) 20px calc(env(safe-area-inset-bottom,0px) + 40px)}
+.hero{text-align:center;display:grid;gap:10px;justify-items:center}
+.hero img{width:132px;height:132px;border-radius:30px;box-shadow:0 14px 30px rgba(224,90,140,.28)}
+h1{font-family:"Jua",sans-serif;font-weight:400;font-size:30px;margin:6px 0 0}
+.sub{color:var(--muted);margin:0}
+.btn{display:block;margin:22px 0 8px;padding:16px;border-radius:999px;background:var(--pink);color:#fff;text-align:center;font-family:"Jua",sans-serif;font-size:20px;text-decoration:none;box-shadow:0 8px 0 var(--pink-d)}
+.btn:active{transform:translateY(4px);box-shadow:0 4px 0 var(--pink-d)}
+.note{background:var(--warn);color:var(--warn-ink);border-radius:16px;padding:12px 14px;font-size:14.5px;margin:14px 0}
+.note b{font-weight:700}
+.card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 18px;margin-top:14px}
+.card h2{font-family:"Jua",sans-serif;font-weight:400;font-size:19px;margin:0 0 8px}
+ol{margin:0;padding-left:22px;display:grid;gap:8px}
+li b{color:var(--pink-d)}
+.small{color:var(--muted);font-size:13px;margin-top:14px;text-align:center}
+#inapp{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="icon-512.png" alt="팝업 수첩 아이콘">
+    <h1>팝업 수첩</h1>
+    <p class="sub">산리오·위글위글 팝업 소식과 상품을 모아 보는 앱</p>
+  </div>
+
+  <div class="note" id="inapp"><b>지금 카카오톡 안에서 열려 있어요.</b><br>오른쪽 아래(또는 위) 메뉴에서 <b>“다른 브라우저로 열기 → Safari”</b>를 눌러 다시 열어주세요. 카카오톡 안에서는 설치가 안 돼요.</div>
+
+  <a class="btn" id="install" href="popup-sucheop.mobileconfig">홈 화면에 설치하기</a>
+
+  <div class="card">
+    <h2>설치 순서</h2>
+    <ol>
+      <li>위 버튼을 누르고 <b>허용</b>을 눌러요.</li>
+      <li>“프로파일이 다운로드됨”이 뜨면 <b>설정</b> 앱을 열어요.</li>
+      <li>맨 위 <b>프로파일이 다운로드됨</b> → 오른쪽 위 <b>설치</b>.</li>
+      <li>아이폰 암호 입력 → 한 번 더 <b>설치</b> → <b>완료</b>.</li>
+      <li>홈 화면에 생긴 <b>팝업 수첩</b> 아이콘을 눌러요.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>알아두기</h2>
+    <ol>
+      <li>설치 중 “서명되지 않음”이 보여도 괜찮아요. 홈 화면 아이콘 하나만 추가해요.</li>
+      <li>지우려면 설정 → 일반 → VPN 및 기기 관리 → 팝업 수첩 → 프로파일 제거.</li>
+    </ol>
+  </div>
+  <p class="small">아이폰 Safari 전용이에요.</p>
+</div>
+<script>
+var ua=navigator.userAgent||"";
+if(/KAKAOTALK|Instagram|FBAN|FBAV|Line\//i.test(ua)){document.getElementById("inapp").style.display="block";}
+</script>
+</body>
+</html>
